@@ -21,12 +21,20 @@
 
 #include "modbus-version.h"
 
+/* Visibility macros for Windows */
 #if defined(_MSC_VER)
-# if defined(DLLBUILD)
-/* define DLLBUILD when building the DLL */
+# if defined(MODBUS_STATIC)
+/* Static library build or use */
+#  define MODBUS_API
+# elif defined(MODBUS_BUILD_DLL)
+/* Building DLL */
 #  define MODBUS_API __declspec(dllexport)
-# else
+# elif defined(MODBUS_USE_DLL)
+/* Using DLL */
 #  define MODBUS_API __declspec(dllimport)
+# else
+/* Default to static behavior */
+#  define MODBUS_API
 # endif
 #else
 # define MODBUS_API
