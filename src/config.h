@@ -101,8 +101,6 @@
 #  define HAVE_TIME_H        1
 #  define HAVE_WINSOCK2_H    1
 #  define STDC_HEADERS       1
-#  define WINVER             0x0501  /* Windows XP and later */
-#  define _WIN32_WINNT       0x0501
 
 /* No fork/vfork/select/socket on Windows POSIX */
 #  undef  HAVE_UNISTD_H
