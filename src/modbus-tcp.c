@@ -14,6 +14,9 @@
 # endif
 #endif
 
+/* Ensure generated configuration macros are visible (e.g. HAVE_NETINET_IP_H). */
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
